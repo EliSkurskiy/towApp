@@ -1,0 +1,39 @@
+﻿
+    <div class="container">
+    
+        <form class="form-group" role="form" name="regCtrl.companyForm">
+            <h2 class="form-signin-heading">Company Information</h2>
+            <hr />
+            <label for="inputCompName" class="sr-only">Company Name</label>
+            <label for="inputCompName">Company Name</label>
+            <input ng-model="regCtrl.companyData.companyName" type="text" id="inputCompName" class="form-control" placeholder="Company Name" required>
+            <label for="inputFName" class="sr-only">First Name</label>
+            <label for="inputFName">First Name</label>
+            <input ng-model="regCtrl.companyData.firstName" type="text" id="inputFName" class="form-control" placeholder="First Name" ng-maxlength="3" required>
+            <span ng-show="">Longer</span>
+
+            <label for="inputLName" class="sr-only">Last Name</label>
+            <label for="inputLName">Last Name</label>
+            <input ng-model="regCtrl.companyData.lastName" type="text" id="inputLName" class="form-control" placeholder="LastName" required>
+            <label for="inputPhoneNumber" class="sr-only">Phone-Number</label>
+            <label for="inputPhoneNumber">Phone-Number</label>
+            <input ng-model="regCtrl.companyData.phoneNumber" type="text" id="inputPhoneNumber" class="form-control" placeholder="Phone-Number" required>
+
+            <label for="inputNumOfTrucks" class="sr-only">Number Of Trucks</label>
+            <label for="inputNumOfTrucks">Number Of Trucks</label>
+            <input ng-model="regCtrl.companyData.numberOfTrucks" type="number" id="inputNumOfTrucks" class="form-control" placeholder="Number Of Trucks" required>
+
+            <label for="inputTwentyForHours" class="sr-only">24/7</label>
+            <label for="inputTwentyForHours">Do you provide services 24/7?</label>
+            <select ng-value="regCtrl.companyData.twentyFourHours" ng-model="regCtrl.companyData.twentyFourHours" id="inputTwentyForHours" class="form-control" placeholder="24/7" required>
+                <option disabled selected>Do you work 24/7?</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <hr />
+            <button ng-click="regCtrl.addCompanyData()" ng-hide="regCtrl.editMode" class="btn btn-lg btn-success btn-block" type="button">Submit</button>
+            <button ng-click="regCtrl.updateCompanyData()" ng-show="regCtrl.editMode" class="btn btn-lg btn-warning btn-block" type="button">Edit</button>
+            
+        </form>
+        <!--<pre>{{regCtrl.companyForm.firstName | json}}</pre>-->
+    </div> <!-- /container -->

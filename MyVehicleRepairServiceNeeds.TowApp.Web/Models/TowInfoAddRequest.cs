@@ -9,6 +9,9 @@ namespace MyVehicleRepairServiceNeeds.Models
     public class TowInfoAddRequest
     {
         [Required]
+        public string CompanyName { get; set; }
+
+        [Required]
         public string FirstName { get; set; }
 
         [Required]

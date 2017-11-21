@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Registeration</title>
+
+</head>
+<body>
+
+    <h1>Register</h1>
+    <form id="formReset">
+        <label>Company Name</label>
+        <input id="cName" type="text" placeholder="Company Name" />
+        <label>First Name</label>
+        <input id="fName" type="text" placeholder="First Name" />
+        <label>Last Name</label>
+        <input id="lName" type="text" placeholder="Last Name" />
+        <label>Phone-Number</label>
+        <input id="pNumber" type="text" placeholder="Phone-Number" />
+        <label>Number Of Trucks</label>
+        <input id="numOfTrucks" type="number" placeholder="Number of Trucks" />
+        <label>24/7</label>
+        <select id="twentyFourHours" type="password" placeholder="24/7">
+            <option disabled selected>Do you work 24/7?</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <p>&nbsp;</p>
+        <input id="btnSubmit" type="button" value="Register Now!" />
+        <input type="reset" value="Clear" />
+    </form>
+    <p id="outPut"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("Jquery is ready");
+            $("#btnSubmit").on("click", showFormData, _addCompanyRecord);
+        });
+        var showFormData = function () {
+            companyData = {
+                cName: $("#cName").val()
+                , fName: $("#fName").val()
+                , lName: $("#lName").val()
+                , pNumber: $("#pNumber").val()
+                , numOfTrucks: $("#numOfTrucks").val()
+                , twentyFourHours: $("#twentyFourHours").val()
+            }
+            return companyData;
+        };
+
+        function _addCompanyRecord(companyData, onSuccess, onError) {
+            var settings = {
+                url: "/api/towing/companies"
+                , type: "POST"
+                , cache: false
+                , contentType: 'json'
+                , withCredentials: true
+                , data: companyData
+            };
+            return $http(settings)
+                .then(onSuccess, onError)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+﻿<!--<header class="main-header">
+    <div class="container text-center-xs">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <h6>{{navPubVm.outText}}</h6><a>
+                    <img ui-sref="pub" src="/content/images/logo.png" alt="FoodBingo" class="logo img-responsive img-center-xs">
+                </a>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+                <ul class="list-unstyled list-inline top-links text-right-lg text-right-md text-right-sm text-bold">
+                    <li class="cursor-P" ng-click="navPubVm.goToOwnProfile()" ng-show="navPubVm.exists"><a>Hello {{navPubVm.userName}}</a></li>
+                    <li class="cursor-P" ng-click="navPubVm.logout()" ng-show="navPubVm.exists"><a>Logout</a></li>
+                    <li><a ng-hide="navPubVm.exists" ui-sref="pub.login">Login/Register</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</header>-->
+
+<style>
+    .backgroundColor2 {
+        background-color: #9E4624; /* Standard syntax (must be last) */
+    }
+    .fontC {
+        color: #F6D155;
+    }
+</style>
+
+
+
+<nav class="well backgroundColor2">
+    <div>
+        <div>
+            <button ui-sref="pub" class="btn btn-info btn-lg fontC">Home</button>
+            <button ui-sref="pub.records" class="btn btn-info btn-lg pull-right fontC">Company Records</button>
+            <button  style="margin-right:2px;"  ui-sref="pub.register" class="fontC btn btn-info btn-lg pull-right">Register Company</button>
+            
+        </div>
+    </div>
+
+</nav>

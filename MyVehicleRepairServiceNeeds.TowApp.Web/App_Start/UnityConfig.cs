@@ -45,7 +45,7 @@ namespace MyVehicleRepairServiceNeeds.TowApp.Web
             
             // TODO: Register your type's mappings here.
              container.RegisterType<ITowInfoService, TowInfoService>();
-            //container.RegisterType<IDao, Dao>();
+            
         }
     }
 }
